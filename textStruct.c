@@ -4,6 +4,15 @@
 
 #define MAX_STRING_SIZE 4000
 
+/*
+needes things:
+  find word- split into 2 functions
+  add a space with words with apostrophies
+  have only print function be voids
+  nicely commented: include a flow chart and picture of different outputs
+  make it have a command line - to specify output: anything : letter, full report, half report, letter a, search--word 
+*/
+
 struct Report {
    char  word[50];
     int line_infile;
