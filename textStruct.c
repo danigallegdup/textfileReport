@@ -27,8 +27,8 @@ void findWords(char *buffer, int numofchar);
 void sortApha(struct Report *all_words, int size);
 void sortLength(struct Report *all_words, int size);
 void Repetitions(struct Report *all_words, int size);
+void printByChar(char alpha, struct Report *all_words, int size );
 
-void startWith(char letter); // print out numbers
 void quickRecap(int numOfchar, int numofWords, struct Report mostFrequent, struct Report longest_word); // prints before
 
 int main(int argc, char **argv){
@@ -94,10 +94,11 @@ void findWords(char *buffer, int numofChar){
 
 // itterate through text
   for(int i = 0 ;i<numofChar+1; i++ ){
-    if(buffer[i] != '\n' && buffer[i] != ' ' && buffer[i] != '.' && buffer[i] != ','  && buffer[i] != ':'  ) {
+    if(buffer[i] != '\n' && buffer[i] != ' ' && buffer[i] != '.'&&
+       buffer[i] != ','  && buffer[i] != ':' ) 
+    {
         word[wordIndex]= buffer[i]; // adding all joint letters to make a word
         wordIndex++;
-
     }else{ // assuption that there extranious spaces (if yes skip of wordindex > 2)
         
          for(int i = wordIndex; i < 20; i++){
@@ -121,10 +122,9 @@ void findWords(char *buffer, int numofChar){
   }
     sortApha(all_words, ReportIndex);
     //sortLength(all_words,  ReportIndex);
-
- 
    
-
+      printReport(all_words,  ReportIndex);
+ 
 }
 
 /*
@@ -154,9 +154,20 @@ void sortApha(struct Report *all_words, int size){
    }
 
   Repetitions(all_words, size);
-  printReport(all_words, size);
 }
 
+void Repetitions(struct Report *all_words, int size){
+    for(int i =0;i<size;i++)
+    { for(int j=i+1;j< size ;j++)
+        {if(strcmp(all_words[i].word,all_words[j].word) == 0)
+          {
+               all_words[i].repetition = all_words[i].repetition+ 1 ;
+               all_words[j].repetition = all_words[i].repetition;
+          }
+        }
+   }
+
+}
 
 void sortLength(struct Report *all_words, int size){
      struct Report NewWord;
@@ -178,18 +189,6 @@ void sortLength(struct Report *all_words, int size){
 }
 
 
-void Repetitions(struct Report *all_words, int size){
-    for(int i =0;i<size;i++)
-    { for(int j=i+1;j< size ;j++)
-        {if(strcmp(all_words[i].word,all_words[j].word) == 0)
-          {
-               all_words[i].repetition = all_words[i].repetition+ 1 ;
-               all_words[j].repetition = all_words[i].repetition;
-          }
-        }
-   }
-
-}
 
 /*
 Prints out array of Reports - takes in number of words
