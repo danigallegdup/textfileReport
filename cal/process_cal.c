@@ -30,12 +30,13 @@ struct Event{
     char  time[100];
     char  summary[100];
     char  location[100];
+    char  rule[200];
 }Event;  
 
 
 int IntoString( char *filename, char *buffer);
 void filestuff(int argc, char **argv);
-struct Event createEvents( char *date, char *weekday,char *time,char *summary,char *location);
+struct Event createEvents( char *date, char *weekday,char *time,char *summary,char *location, chat *rule);
 void printEvent(struct Event event);
 
 //void createEvent
@@ -47,21 +48,13 @@ int main(int argc, char **argv){
     char  time[100] ="6:00 PM to  9:00 PM:";
     char  summary[100] = "Romantic dinner with Chris";
     char  location[100] = "Burger king";
+    char  rule[200] = "RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=2021 10 02 T 23 59 59;BYDAY=SA";
 
 struct Event event;
-event = createEvents(date, weekday,time,summary,location);
+event = createEvents(date, weekday,time,summary,location,rule);
 printEvent(event);
 printf("\n");
    
-       
-  
-
-/*
-February 14, 2021 (Sun)
-‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐ 
-6:00 PM to  9:00 PM: Romantic dinner with Chris {{Burger king}} 
-
-*/   
 	return 0;
 }
 
@@ -112,7 +105,7 @@ int IntoString( char *filename, char *buffer){
 /*
 assume that it comes in lines: if 
 */
-struct Event createEvents(char *date, char *weekday,char *time,char *summary,char *location){
+struct Event createEvents(char *date, char *weekday,char *time,char *summary,char *location, char *rule){
 
     struct Event event;
         strcpy(event.date,date);
@@ -120,9 +113,11 @@ struct Event createEvents(char *date, char *weekday,char *time,char *summary,cha
         strcpy(event.time, time);
         strcpy(event.summary, summary );
         strcpy(event.location, location);
+        strcpy(event.rule, rule);
+
+    
     return event;
 }
-
 
 void printEvent(struct Event event){
      char line[100] ="\n\t‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐\n\t";
