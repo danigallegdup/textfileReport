@@ -4,23 +4,7 @@
 
 
 /*
-make a function that can print the results out perfectly
-*/
- 
- /*
-    BEGIN:VCALENDAR
-    BEGIN:VEVENT
-    DTSTART:20210214T180000
-    DTEND:20210214T210000
-    LOCATION:Burger King
-    SUMMARY:Romantic dinner with Chris
-    END:VEVENT
-    END:VCALENDAR
- */
-
-
-/*
-
+this is big and hard but hella doable
 
 */
 
@@ -36,76 +20,52 @@ struct Event{
 
 int IntoString( char *filename, char *buffer);
 void filestuff(int argc, char **argv);
-struct Event createEvents( char *date, char *weekday,char *time,char *summary,char *location, chat *rule);
+void createEvents( char *date, char *weekday,char *time,char *summary,char *location, char *rule,
+                             struct Event *all_events, int currentIndex );
 void printEvent(struct Event event);
-
+void date(char *date);
+void time(char *time);
+void weekday(char *weekday);
+void add_event(struct Event *all_events,int currentIndex,struct Event event);
 //void createEvent
 
 int main(int argc, char **argv){
 
+ struct Event all_events[1000];
+
     char  date[100] = "February 14, 2021";
     char  weekday[100] = "Sun";
-    char  time[100] ="6:00 PM to  9:00 PM:";
+    char  time[100] ="6:00 PM to 9:00 PM:";
     char  summary[100] = "Romantic dinner with Chris";
-    char  location[100] = "Burger king";
-    char  rule[200] = "RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=2021 10 02 T 23 59 59;BYDAY=SA";
+    char  location[100] = "Burger King";
+    char  rule[200] = "RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=2021 10 02 T 23:59:59;BYDAY=SA";
 
-struct Event event;
-event = createEvents(date, weekday,time,summary,location,rule);
-printEvent(event);
+
+ /*
+    stages I will go for 
+ */
+createEvents("20210214-20210214", "UD","T180000-T210000",summary,location,rule, all_events, 0);
+createEvents("2021/02/14","1","18:00:00-21:00:00",summary,location,rule, all_events, 1);
+createEvents(date, weekday,time,summary,location,rule, all_events, 2);
+
+printEvent(all_events[0]);
+printEvent(all_events[1]);
+printEvent(all_events[2]);
 printf("\n");
    
 	return 0;
 }
 
 
-void filestuff(int argc, char **argv){
-      if (argc < 2) {
-        fprintf(stderr, "usage: %s filename \n", argv[0]); exit(1);
-        }
-
-        printf ("opening file name: %s\n",argv[1]);
-        char buffer[4000];
-        int numofchar;
-
-       numofchar = IntoString(argv[1], buffer);
-        //printf("\n%s\n", buffer);
-
-}
-/*
-take filename and puts it into bufffer
-*/
-int IntoString( char *filename, char *buffer){
-    char c;  FILE *fptr;
-    int numOfchar=1;
-
-    // Open file
-    fptr = fopen(filename, "r");
-    if (fptr == NULL){
-        printf("Cannot open file \n");
-        exit(0);
-    }
-
-    // Read contents from file
-    c = fgetc(fptr);
-    int wordindex; 
-    wordindex = 0;
-    
-    while (c != EOF){
-        buffer[wordindex]= c;
-        numOfchar++;
-        wordindex++; 
-        c = fgetc(fptr);
-    }
-   
-    fclose(fptr);
-    return numOfchar;
+void add_event(struct Event *all_events,int currentIndex, struct Event newEvent){
+    all_events[currentIndex]=newEvent ;
 }
 
 /*
-assume that it comes in lines: if 
+with all needed material creates and returns event
 */
-struct Event createEvents(char *date, char *weekday,char *time,char *summary,char *location, char *rule){
+void createEvents(char *date, char *weekday,char *time,char *summary,char *location, char *rule,
+                        struct Event *all_events, int currentIndex ){
 
     struct Event event;
         strcpy(event.date,date);
@@ -115,10 +75,12 @@ struct Event createEvents(char *date, char *weekday,char *time,char *summary,cha
         strcpy(event.location, location);
         strcpy(event.rule, rule);
 
-    
-    return event;
+    add_event( all_events, currentIndex, event);
 }
 
+/*
+prints one event that is passed through param
+*/
 void printEvent(struct Event event){
      char line[100] ="\n\t‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐\n\t";
     printf("\n\t%s (%s)%s%s %s {{%s}}\n",
@@ -130,6 +92,8 @@ void printEvent(struct Event event){
     event.location); 
 }
     
+
+
 
 
 
