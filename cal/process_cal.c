@@ -4,8 +4,6 @@
 
 
 
-
-
 /*
 BEGIN:VCALENDAR
 VERSION:A
@@ -17,8 +15,6 @@ LOCATION:The Bumptious Barista
 SUMMARY:Coffee with Pat
 END:VEVENT
 END:VCALENDAR
-
-
  */
 
 struct Event{
