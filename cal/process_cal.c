@@ -3,10 +3,23 @@
 #include <string.h>
 
 
-/*
-this is big and hard but hella doable
 
-*/
+
+
+/*
+BEGIN:VCALENDAR
+VERSION:A
+BEGIN:VEVENT
+DTSTART:20210102T111500
+DTEND: 20210102T123000
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20211002T235959;BYDAY=SA
+LOCATION:The Bumptious Barista
+SUMMARY:Coffee with Pat
+END:VEVENT
+END:VCALENDAR
+
+
+ */
 
 struct Event{
     char  date[100];
@@ -18,20 +31,26 @@ struct Event{
 }Event;  
 
 
-int IntoString( char *filename, char *buffer);
-void filestuff(int argc, char **argv);
+void add_event(struct Event *all_events,int currentIndex,struct Event event);
+void firstphase();
 void createEvents( char *date, char *weekday,char *time,char *summary,char *location, char *rule,
                              struct Event *all_events, int currentIndex );
+                
 void printEvent(struct Event event);
-void date(char *date);
-void time(char *time);
-void weekday(char *weekday);
-void add_event(struct Event *all_events,int currentIndex,struct Event event);
+
 //void createEvent
 
 int main(int argc, char **argv){
+firstphase();
+   
+	return 0;
+}
+
+
+void firstphase(){
 
  struct Event all_events[1000];
+
 
     char  date[100] = "February 14, 2021";
     char  weekday[100] = "Sun";
@@ -41,21 +60,18 @@ int main(int argc, char **argv){
     char  rule[200] = "RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=2021 10 02 T 23:59:59;BYDAY=SA";
 
 
- /*
-    stages I will go for 
- */
-createEvents("20210214-20210214", "UD","T180000-T210000",summary,location,rule, all_events, 0);
-createEvents("2021/02/14","1","18:00:00-21:00:00",summary,location,rule, all_events, 1);
-createEvents(date, weekday,time,summary,location,rule, all_events, 2);
 
-printEvent(all_events[0]);
-printEvent(all_events[1]);
-printEvent(all_events[2]);
-printf("\n");
-   
-	return 0;
+    createEvents("20210214-20210214", "UD","T180000-T210000",summary,location,rule, all_events, 0); 
+    createEvents("2021/02/14","1","18:00:00-21:00:00",summary,location,rule, all_events, 1); //sort here
+    createEvents(date, weekday,time,summary,location,rule, all_events, 2);
+
+
+    printEvent(all_events[0]);
+    printEvent(all_events[1]);
+    printEvent(all_events[2]);
+    printf("\n");
+
 }
-
 
 void add_event(struct Event *all_events,int currentIndex, struct Event newEvent){
     all_events[currentIndex]=newEvent ;
