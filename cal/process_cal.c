@@ -74,7 +74,7 @@ void add_event(struct Event *all_events,int currentIndex, struct Event newEvent)
 }
 
 /*
-with all needed material creates and returns event
+with all needed material creates and returns event 
 */
 void createEvents(char *date, char *weekday,char *time,char *summary,char *location, char *rule,
                         struct Event *all_events, int currentIndex ){

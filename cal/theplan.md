@@ -8,8 +8,6 @@
 
 
 
-
-
 STEP 1: Find all events: 
     - FindKeyWord_Lines(char *line)
         - BEGIN:VEVENT:--> CreateEvent(array, index)
