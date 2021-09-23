@@ -7,6 +7,14 @@
     -------------------------------------------------------------------------------------------------------------------------------
 
 
+BEGIN:VCALENDAR
+BEGIN:VEVENT
+DTSTART:20210214T180000
+DTEND:20210214T210000
+LOCATION:Burger King
+SUMMARY:Romantic dinner with Chris
+END:VEVENT
+END:VCALENDAR
 
 STEP 1: Find all events: 
     - FindKeyWord_Lines(char *line)
