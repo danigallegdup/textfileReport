@@ -1,4 +1,8 @@
 In Here:
+- piglatin_translater.py
+- matrix211.py 
+- secret_santa.py
+- countdown_to22.py - current time
 
 -string manipulation
 - files I/O
@@ -19,7 +23,14 @@ NumPy and stmpy
 	Matrix Algebra: : inverse,  multiply, RREF, equally spaces numbers
 
 
+Datetime
+ - goal setting: give two dates: tells the difference: weeks, days, 
+ print linearly if you want : type yes
 
-data
 
+Lambda
+- https://www.w3schools.com/python/python_lambda.asp
+
+
+queue, stack, linked list
 
