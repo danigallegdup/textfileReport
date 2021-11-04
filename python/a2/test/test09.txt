@@ -116,7 +116,7 @@ February 26, 2021 (Fri)
 11:30 AM to 12:30 PM: ASTR 101 {{ELL 067}}
 
 March 01, 2021 (Mon)
------------------------
+--------------------
  8:30 AM to 10:00 AM: MATH 102 {{HSD A240}}
 10:00 AM to 11:30 AM: WRIT 120 {{CLE A210}}
  2:30 PM to  4:00 PM: CSC 115 {{ECS 123}}
