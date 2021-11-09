@@ -61,6 +61,7 @@ things I learned form A2 and my own programing:
 -  string =  date + line + content (concatentaion)
 -  w = w.replace(",", "\n") 
 -  n_w = n_w.capitalize()
+- if "RRULE" in e:
 
 # import calender
 - string = calendar.month_name[month_num]
