@@ -1,0 +1,98 @@
+==7429== Memcheck, a memory error detector
+==7429== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==7429== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==7429== Command: ./process_cal3 --start=2021/4/18 --end=2021/4/21 --file=ics/diana-devops.ics 2
+==7429== 
+==7429== Conditional jump or move depends on uninitialised value(s)
+==7429==    at 0x4E833CB: ____strtol_l_internal (strtol_l.c:434)
+==7429==    by 0x4E7E7AF: atoi (atoi.c:27)
+==7429==    by 0x109D6D: convertTime (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x109C79: fill_properties (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A59B: fill_out_ll (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A7FB: linkedlist (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x108E52: main (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429== 
+==7429== Conditional jump or move depends on uninitialised value(s)
+==7429==    at 0x4E833D8: ____strtol_l_internal (strtol_l.c:436)
+==7429==    by 0x4E7E7AF: atoi (atoi.c:27)
+==7429==    by 0x109D6D: convertTime (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x109C79: fill_properties (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A59B: fill_out_ll (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A7FB: linkedlist (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x108E52: main (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429== 
+==7429== Use of uninitialised value of size 8
+==7429==    at 0x4E833DF: ____strtol_l_internal (strtol_l.c:460)
+==7429==    by 0x4E7E7AF: atoi (atoi.c:27)
+==7429==    by 0x109D6D: convertTime (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x109C79: fill_properties (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A59B: fill_out_ll (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A7FB: linkedlist (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x108E52: main (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429== 
+==7429== Use of uninitialised value of size 8
+==7429==    at 0x4E833EE: ____strtol_l_internal (strtol_l.c:461)
+==7429==    by 0x4E7E7AF: atoi (atoi.c:27)
+==7429==    by 0x109D6D: convertTime (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x109C79: fill_properties (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A59B: fill_out_ll (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A7FB: linkedlist (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x108E52: main (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429== 
+==7429== Conditional jump or move depends on uninitialised value(s)
+==7429==    at 0x4E833CB: ____strtol_l_internal (strtol_l.c:434)
+==7429==    by 0x4E7E7AF: atoi (atoi.c:27)
+==7429==    by 0x109DFC: convertTime (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x109C79: fill_properties (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A59B: fill_out_ll (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A7FB: linkedlist (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x108E52: main (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429== 
+==7429== Conditional jump or move depends on uninitialised value(s)
+==7429==    at 0x4E833D8: ____strtol_l_internal (strtol_l.c:436)
+==7429==    by 0x4E7E7AF: atoi (atoi.c:27)
+==7429==    by 0x109DFC: convertTime (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x109C79: fill_properties (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A59B: fill_out_ll (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A7FB: linkedlist (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x108E52: main (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429== 
+==7429== Use of uninitialised value of size 8
+==7429==    at 0x4E833DF: ____strtol_l_internal (strtol_l.c:460)
+==7429==    by 0x4E7E7AF: atoi (atoi.c:27)
+==7429==    by 0x109DFC: convertTime (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x109C79: fill_properties (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A59B: fill_out_ll (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A7FB: linkedlist (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x108E52: main (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429== 
+==7429== Use of uninitialised value of size 8
+==7429==    at 0x4E833EE: ____strtol_l_internal (strtol_l.c:461)
+==7429==    by 0x4E7E7AF: atoi (atoi.c:27)
+==7429==    by 0x109DFC: convertTime (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x109C79: fill_properties (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A59B: fill_out_ll (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x10A7FB: linkedlist (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x108E52: main (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429== 
+==7429== Conditional jump or move depends on uninitialised value(s)
+==7429==    at 0x10A76D: linkedlist (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429==    by 0x108E52: main (in /home/vagrant/host-mirror/a3/process_cal3)
+==7429== 
+April 19, 2021 (Mon)
+--------------------
+ 8:00 AM to  3:00 PM: Clean apartment {{Flouncy Towers}}
+
+April 20, 2021 (Tue)
+--------------------
+12:00 PM to  4:00 PM: Shampoo runs in apartment {{Flouncy Towers}}
+==7429== 
+==7429== HEAP SUMMARY:
+==7429==     in use at exit: 0 bytes in 0 blocks
+==7429==   total heap usage: 782 allocs, 782 frees, 157,933 bytes allocated
+==7429== 
+==7429== All heap blocks were freed -- no leaks are possible
+==7429== 
+==7429== For counts of detected and suppressed errors, rerun with: -v
+==7429== Use --track-origins=yes to see where uninitialised values come from
+==7429== ERROR SUMMARY: 2881 errors from 9 contexts (suppressed: 0 from 0)
