@@ -6,7 +6,7 @@ This repo consists of my multiple different versions of the same program
 - input .ics file:
 - ![alt text](./img/input.png)
 - output to console:
-![alt text](./img/demo.png)
+- ![alt text](./img/demo.png)
 
 # a1 and a3 are written in C:
 -  a1: arrays, string manipulation in C
