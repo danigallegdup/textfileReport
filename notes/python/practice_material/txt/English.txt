@@ -1,5 +1,0 @@
-English.text
-Hello world
-No matter how much I try to deny it, I really do love the world and everything that is in it.
-This is me making fun little python programs to get ready for a test
-This is going to make a another txt file wiht the translation provided
