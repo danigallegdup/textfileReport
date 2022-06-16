@@ -1,8 +1,10 @@
 
 /*
-Daniela Gallegos Dupuis
+Written by: Daniela Gallegos Dupuis
+
+How to Run
 gcc process_cal.c -o process_cal
-gcc ./process_cal --start=1234/01/12 --end=2134/12/11 --file=ics/diana-devops.ics
+./process_cal --start=1234/01/12 --end=2134/12/11 --file=ics/diana-devops.ics
 
 my very best shot:
 - no global variables
