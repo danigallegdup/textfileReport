@@ -8,9 +8,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../emalloc.h"
-#include "../ics.h"
-#include "../listy.h"
+#include "../other/emalloc.h"
+#include "../other/ics.h"
+#include "../other/listy.h"
 #include <time.h>
 
 struct recipes{
