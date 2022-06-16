@@ -3,10 +3,9 @@
 This repo consists of my multiple different versions of the same program
 
 # Demo
-input .ics file
-![alt text](./img/demo.png)
-
-output to console
+- input .ics file:
+- ![alt text](./img/input.png)
+- output to console:
 ![alt text](./img/demo.png)
 
 # a1 and a3 are written in C:
