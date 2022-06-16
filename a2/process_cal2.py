@@ -1,6 +1,7 @@
 # Written By: Daniela Gallegos Dupuis
-#python3 process_cal2.py
-#python3 ./process_cal --start=1234/01/12 --end=2134/12/11 --file=ics/diana-devops.ics
+
+# run in the terminal
+#python3 ./process_cal2.py --start=1234/01/12 --end=2134/12/11 --file=ics/diana-devops.ics
 
 
 #PART ONE: GET ALL INFROMATION FROM ARUGUMENT LINE: SPLIT EACH SEPERATE EVENT - STARTS ARE END DATES
